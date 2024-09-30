@@ -102,4 +102,15 @@ public class Test {
 - `save(Site s)` : Permet d'insérer un nouveau site dans la base de données.
 - `main(String[] args)` : Appelle la méthode `save` pour ajouter des sites à la base de données.
 
-#
+## Fonctionnement de l'application
+
+### 1. Connexion à la base de données
+
+L'application se connecte à une base de données MySQL nommée **db** sur `localhost` en utilisant l'utilisateur **root** et un mot de passe vide (`""`). Les informations de connexion sont gérées par les lignes suivantes dans le code :
+
+```java
+String url = "jdbc:mysql://localhost/db";
+String user = "root";
+String password = "";
+```
+
