@@ -113,4 +113,27 @@ String url = "jdbc:mysql://localhost/db";
 String user = "root";
 String password = "";
 ```
+### 2. Main - Exécution des insertions
+Dans la méthode main, les trois sites suivants sont insérés dans la base de données :
+SAFI
+MARRAKECH
+EL JADIDA
+
+Voici le bloc d'insertion :
+
+```java
+public static void main(String[] args) {
+//insertion des données
+        save(new Site("SAFI"));
+        save(new Site("MARRAKECH"));
+        save(new Site("EL JADIDA"));
+    }
+```
+## Affichage dans la base de données : 
+- Voici ce que ça donne sur phpMyadmin :
+
+![WhatsApp Image 2024-09-30 à 20 00 53_7d05db0f](https://github.com/user-attachments/assets/b3e7a0fa-2d0e-4d51-9523-942708925965
+
+# Conclusion : 
+Ce projet offre une illustration simple mais efficace de la façon d'utiliser JDBC pour interagir avec une base de données MySQL dans une application Java. Grâce à l'utilisation des classes Site et Test, nous avons pu facilement insérer, consulter et gérer des enregistrements de sites web dans une table de base de données.
 
