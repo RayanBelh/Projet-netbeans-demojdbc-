@@ -137,3 +137,10 @@ public static void main(String[] args) {
 # Conclusion : 
 Ce projet offre une illustration simple mais efficace de la façon d'utiliser JDBC pour interagir avec une base de données MySQL dans une application Java. Grâce à l'utilisation des classes Site et Test, nous avons pu facilement insérer, consulter et gérer des enregistrements de sites web dans une table de base de données.
 
+# Video démonstrative : 
+
+https://github.com/user-attachments/assets/ad3e3367-04d4-48a1-9b30-11c50c8197ce
+
+
+
+
