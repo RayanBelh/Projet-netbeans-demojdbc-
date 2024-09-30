@@ -33,6 +33,7 @@ this.nom = nom;
 }
 }
 ```
+#### Les attributs :
 - **id** : un entier représentant l'identifiant unique du site.
 - **nom** : une chaîne de caractères représentant le nom du site.
 
@@ -44,7 +45,47 @@ this.nom = nom;
 
 ### 2. `Test`
 
-Cette classe contient les méthodes pour interagir avec la base de données MySQL et manipuler les données de la table `site`. 
+Cette classe contient les méthodes pour interagir avec la base de données MySQL et manipuler les données de la table `site`. Voici le code utilisé : 
+```java
+public class Test {
+    public static void save(Site s) {
+//Information d'accès à la base de données
+String user = "root";
+String password = "";
+String url = "jdbc:mysql://localhost/db";
+Connection cn = null;
+Statement st = null;
+try {
+//Etape 1 : Chargement du driver
+Class.forName("com.mysql.jdbc.Driver");
+//Etape 2 : Récupération de la connexion
+cn = (Connection) DriverManager.getConnection(url, user, password);
+//Etape 3 : Création d'un statement
+st = (Statement) cn.createStatement();
+String req = "insert into site values(null,'" + s.getNom() + "')";
+//Etape 4 : Exécution de la requête
+st.executeUpdate(req);
+} catch (SQLException e) {
+System.out.println("Erreur SQL");
+} catch (ClassNotFoundException ex) {
+System.out.println("Impossible de charger le driver");
+} finally {
+try {
+//Etape 5 : Libérer les ressources de la mémoire
+st.close();
+cn.close();
+} catch (SQLException ex) {
+System.out.println("Impossible de libérer les ressources");
+}
+}
+}
+    public static void main(String[] args) {
+//insertion des données
+save(new Site("SAFI"));
+save(new Site("MARRAKECH"));
+save(new Site ("EL JADIDA"));
+}
+```
 
 #### Méthodes principales :
 - `save(Site s)` : Permet d'insérer un nouveau site dans la base de données.
